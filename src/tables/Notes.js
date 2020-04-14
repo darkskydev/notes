@@ -5,20 +5,20 @@ const Notes = props => (
         <thead>
         <tr>
             <th>Name</th>
-            <th>Username</th>
+            <th>NotenoteSubject</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        {props.users.length > 0 ? (
-            props.users.map(user => (
-                <tr key={user.id}>
-                    <td>{user.name}</td>
-                    <td>{user.username}</td>
+        {props.notes.length > 0 ? (
+            props.notes.map(note => (
+                <tr key={note.id}>
+                    <td>{note.noteSubject}</td>
+                    <td>{note.noteText}</td>
                     <td>
                         <button
                             onClick={() => {
-                                props.editRow(user)
+                                props.editRow(note)
                             }}
                             className="button muted-button"
                         >
@@ -30,7 +30,7 @@ const Notes = props => (
             ))
         ) : (
             <tr>
-                <td colSpan={3}>No users</td>
+                <td colSpan={3}>No notes</td>
             </tr>
         )}
         </tbody>

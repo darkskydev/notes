@@ -5,41 +5,41 @@ import Notes from './tables/Notes'
 
 const App = () => {
     // Data
-    const usersData = [
-        { id: 1, name: 'Tania', username: 'floppydiskette' },
-        { id: 2, name: 'Craig', username: 'siliconeidolon' },
-        { id: 3, name: 'Ben', username: 'benisphere' },
+    const notesData = [
+        { id: 1, noteSubject: 'Tania', noteText: 'floppydiskette' },
+        { id: 2, noteSubject: 'Craig', noteText: 'siliconeidolon' },
+        { id: 3, noteSubject: 'Ben', noteText: 'benisphere' },
     ]
 
-    const initialFormState = { id: null, name: '', username: '' }
+    const initialFormState = { id: null, noteSubject: '', noteText: '' }
 
     // Setting state
-    const [ users, setUsers ] = useState(usersData)
-    const [ currentUser, setCurrentUser ] = useState(initialFormState)
+    const [ notes, setNotes ] = useState(notesData)
+    const [ currentNote, setCurrentNote ] = useState(initialFormState)
     const [ editing, setEditing ] = useState(false)
 
     // CRUD operations
-    const addUser = user => {
-        user.id = users.length + 1
-        setUsers([ ...users, user ])
+    const addNote = note => {
+        note.id = notes.length + 1
+        setNotes([ ...notes, note ])
     }
 
-    const deleteUser = id => {
+    const deleteNote = id => {
         setEditing(false)
 
-        setUsers(users.filter(user => user.id !== id))
+        setNotes(notes.filter(note => note.id !== id))
     }
 
-    const updateUser = (id, updatedUser) => {
+    const updateNote = (id, updatedNote) => {
         setEditing(false)
 
-        setUsers(users.map(user => (user.id === id ? updatedUser : user)))
+        setNotes(notes.map(note => (note.id === id ? updatedNote : note)))
     }
 
-    const editRow = user => {
+    const editRow = note => {
         setEditing(true)
 
-        setCurrentUser({ id: user.id, name: user.name, username: user.username })
+        setCurrentNote({ id: note.id, noteSubject: note.noteSubject, noteText: note.noteText })
     }
 
     return (
@@ -49,24 +49,24 @@ const App = () => {
                 <div className="flex-large">
                     {editing ? (
                         <Fragment>
-                            <h2>Edit user</h2>
+                            <h2>Edit note</h2>
                             <EditNoteForm
                                 editing={editing}
                                 setEditing={setEditing}
-                                currentUser={currentUser}
-                                updateUser={updateUser}
+                                currentNote={currentNote}
+                                updateNote={updateNote}
                             />
                         </Fragment>
                     ) : (
                         <Fragment>
-                            <h2>Add user</h2>
-                            <AddNoteForm addUser={addUser} />
+                            <h2>Add note</h2>
+                            <AddNoteForm addNote={addNote} />
                         </Fragment>
                     )}
                 </div>
                 <div className="flex-large">
-                    <h2>View users</h2>
-                    <Notes users={users} editRow={editRow} deleteUser={deleteUser} />
+                    <h2>View notes</h2>
+                    <Notes notes={notes} editRow={editRow} deleteNote={deleteNote} />
                 </div>
             </div>
         </div>

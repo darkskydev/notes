@@ -1,30 +1,30 @@
 import React, { useState } from 'react'
 
 const AddNoteForm = props => {
-    const initialFormState = { id: null, name: '', username: '' }
-    const [user, setUser] = useState(initialFormState)
+    const initialFormState = { id: null, noteSubject: '', noteText: '' }
+    const [note, setNote] = useState(initialFormState)
 
     const handleInputChange = event => {
-        const { name, value } = event.target
+        const { noteSubject, value } = event.target
 
-        setUser({ ...user, [name]: value })
+        setNote({ ...note, [noteSubject]: value })
     }
 
     return (
         <form
             onSubmit={event => {
                 event.preventDefault()
-                if (!user.name || !user.username) return
+                if (!note.noteSubject || !note.noteText) return
 
-                props.addUser(user)
-                setUser(initialFormState)
+                props.addNote(note)
+                setNote(initialFormState)
             }}
         >
             <label>Name</label>
-            <input type="text" name="name" value={user.name} onChange={handleInputChange} />
-            <label>Username</label>
-            <input type="text" name="username" value={user.username} onChange={handleInputChange} />
-            <button>Add new user</button>
+            <input type="text" noteSubject="noteSubject" value={note.noteSubject} onChange={handleInputChange} />
+            <label>NotenoteSubject</label>
+            <input type="text" noteSubject="noteText" value={note.noteText} onChange={handleInputChange} />
+            <button>Add new note</button>
         </form>
     )
 }
