@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react'
 import AddNoteForm from './forms/AddNoteForm'
-import EditNoteForm from './forms/EditeNoteForm'
+import EditNoteForm from './forms/EditNoteForm'
 import Notes from './tables/Notes'
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
 
     return (
         <div className="container">
-            <h1>CRUD App with Hooks</h1>
+            <h1>Notes</h1>
             <div className="flex-row">
                 <div className="flex-large">
                     {editing ? (
