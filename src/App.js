@@ -6,9 +6,9 @@ import Notes from './tables/Notes'
 const App = () => {
     // Data
     const notesData = [
-        { id: 1, noteSubject: 'Tania', noteText: 'floppydiskette' },
-        { id: 2, noteSubject: 'Craig', noteText: 'siliconeidolon' },
-        { id: 3, noteSubject: 'Ben', noteText: 'benisphere' },
+        { id: 1, noteSubject: 'Hello', noteText: 'Be sure to say hello today.' },
+        { id: 2, noteSubject: 'Bill', noteText: 'Utility bill is due 5/1' },
+        { id: 3, noteSubject: 'Birthday', noteText: 'Birthday is 4/20' },
     ]
 
     const initialFormState = { id: null, noteSubject: '', noteText: '' }

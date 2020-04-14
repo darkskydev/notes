@@ -22,7 +22,7 @@ const AddNoteForm = props => {
         >
             <label>Name</label>
             <input type="text" name="noteSubject" value={note.noteSubject} onChange={handleInputChange} />
-            <label>noteSubject</label>
+            <label>Note</label>
             <input type="text" name="noteText" value={note.noteText} onChange={handleInputChange} />
             <button>Add new note</button>
         </form>

@@ -5,7 +5,7 @@ const Notes = props => (
         <thead>
         <tr>
             <th>Name</th>
-            <th>noteSubject</th>
+            <th>Note</th>
             <th>Actions</th>
         </tr>
         </thead>
