@@ -21,9 +21,9 @@ const AddNoteForm = props => {
             }}
         >
             <label>Name</label>
-            <input type="text" noteSubject="noteSubject" value={note.noteSubject} onChange={handleInputChange} />
-            <label>NotenoteSubject</label>
-            <input type="text" noteSubject="noteText" value={note.noteText} onChange={handleInputChange} />
+            <input type="text" name="noteSubject" value={note.noteSubject} onChange={handleInputChange} />
+            <label>noteSubject</label>
+            <input type="text" name="noteText" value={note.noteText} onChange={handleInputChange} />
             <button>Add new note</button>
         </form>
     )
