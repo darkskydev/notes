@@ -29,4 +29,4 @@ const AddNoteForm = props => {
     )
 }
 
-export default AddUserForm
+export default AddNoteForm
