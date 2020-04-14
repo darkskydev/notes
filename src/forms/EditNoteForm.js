@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from 'react'
 
-
-const EditUserForm = props => {
+const EditNoteForm = props => {
     const [user, setUser] = useState(props.currentUser)
 
     const handleInputChange = event => {
@@ -34,4 +33,4 @@ const EditUserForm = props => {
     )
 }
 
-export default EditUserForm
+export default EditNoteForm

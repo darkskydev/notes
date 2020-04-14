@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Notes from './tables/Notes'
-import AddUserForm from './forms/AddNoteForm'
-import EditUserForm from './forms/EditNoteForm'
+import AddNoteForm from './forms/AddNoteForm'
+import EditNoteForm from './forms/EditNoteForm'
 
 const App = () => {
     const usersData = [
@@ -41,7 +41,7 @@ const App = () => {
             {editing ? (
                 <div>
                     <h2>Edit user</h2>
-                    <EditUserForm
+                    <EditNoteForm
                         setEditing={setEditing}
                         currentUser={currentUser}
                         updateUser={updateUser}
@@ -50,7 +50,7 @@ const App = () => {
             ) : (
                 <div>
                     <h2>Add user</h2>
-                    <AddUserForm addUser={addUser} />
+                    <AddNoteForm addUser={addUser} />
                 </div>
             )}
         </div>
